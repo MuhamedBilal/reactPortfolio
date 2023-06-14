@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import HeroSection from "./components/HeroSection";
+import EducationSection from "./components/EducationSection";
+import ServicesSection from "./components/ServicesSection";
+import Sidebar from "./components/Sidebar";
+import servicesData from "./data/servicesData";
+import educationData from "./data/educationData";
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container-fluid bg-black p-3">
+    <div className="row" >
+      <div className="col-sm-3" >
+      <Sidebar/>
+      </div>
+		 <div className="col-sm-9" >
+      <HeroSection />
+      <ServicesSection servicesData={servicesData} />
+      <EducationSection educationData={educationData} />
+     </div>
+    </div>
     </div>
   );
 }
